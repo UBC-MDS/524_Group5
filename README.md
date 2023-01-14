@@ -10,7 +10,23 @@ $ pip install stocksignals
 
 ## Usage
 
-- TODO
+```bash
+import stocksignals
+import matplotlib.pyplot as plt
+import yfinance as yf
+
+
+# Generage signals and plots
+move_ave_10_20(stock_ticker, date)
+plot_ma_10_20(stock_ticker, date)
+move_ave_200days(stock_ticker, date)
+plot_ma_200days(stock_ticker, date)
+upper_band, lower_band = get_bbands(stock_ticker)
+plot_bbands(stock_ticker, upper_band, lower_band)
+```
+
+<!-- #region -->
+
 
 ## Contributing
 
@@ -23,3 +39,4 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 ## Credits
 
 `stocksignals` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).
+<!-- #endregion -->
