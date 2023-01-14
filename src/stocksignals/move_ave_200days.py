@@ -1,22 +1,20 @@
-import yfinance as yf
 
-def move_ave_200days(stock_ticker, date):
+def move_ave_200days(stock_data):
     """
     Calculates the 200 day moving average of a stock price on a given date
 
     Parameters
     ----------
-    stock_ticker : string
-        Ticker of the stock such as 'MSFT'
-    date : string
-        Given date for stock picking
+    data : a data file containing all available stock data
+            from Yahoo finance
 
     Returns
     --------
-    moving_avg : float
-        A float represting the 200 day moving average of a stock price on a given date
+    moving_avg : list
+        A list represting the 200 day moving average of a stock price for
+        the period of available data
 
     Examples
     --------
-    >>> move_ave_200days('MSFT', '2023-01-10')
+    >>> move_ave_200days(MSFT_data)
     """

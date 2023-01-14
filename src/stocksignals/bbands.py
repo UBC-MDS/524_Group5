@@ -1,14 +1,12 @@
-import yfinance as yf
-
-def get_bbands(stock_ticker, rate = 20):
+def get_bbands(stock_data, rate = 20):
     """
     Calculates upper and lower Bollinger bands for a stock using
     a day-range; default day range = 20 days
     
     Parameters
     ----------
-    stock_ticker : string 
-        Ticker of the stock such as 'MSFT'
+    data : a data file containing all available stock data
+            from Yahoo finance
     rate : int
         number of days, default = 20 days
     
@@ -22,5 +20,5 @@ def get_bbands(stock_ticker, rate = 20):
         20-day moving average 
     Examples
     --------
-    >>> bbands('MSFT')
+    >>> bbands(MSFT_data)
     """

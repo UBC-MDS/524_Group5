@@ -1,23 +1,26 @@
 import altair as alt
-import yfinance as yf
 
-def plot_ma_200days(stock_ticker, date):
+def plot_ma_200days(moving_avg, period):
     """
-    Plot prices in the past 200 day period of a stock on a given date
+    Plot stock price and corresponding 200 day moving average 
+    for a specified period of time
 
     Parameters
     ----------
-    stock_ticker : string
-        Ticker of the stock such as 'MSFT'
-    date : string
-        Given date for stock picking
+    moving_avg : list
+        A list represting the 200 day moving average of a stock price for
+        the period of available data
+        
+    period : int
+        period of time for which the plot is created
 
     Returns
     --------
     Altair Chart
-        A line chart showing price changes in the past 200 day period
+        A line chart showing price data and corresponding 200 day 
+        moving averige line for a stock
 
     Examples
     --------
-    >>> plot_ma_200days('MSFT', '2023-01-10')
+    >>> plot_ma_200days(moving_avg, 365)
     """

@@ -1,6 +1,6 @@
 import altair as alt
 
-def plot_bbands(stock_ticker, upper_band, lower_band):
+def plot_bbands(upper_band, lower_band):
     """
     Plot stock price along with upper and lower Bollinger band
     
