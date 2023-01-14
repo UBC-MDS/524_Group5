@@ -1,4 +1,4 @@
-# stocksignals
+# Stocksignals
 
 Calculate buy/sell signal indicators for a stock!
 
