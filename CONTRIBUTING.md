@@ -1,4 +1,14 @@
 # Contributing
+## Core Team Members
+
+    - Robin Dhillon
+    - Ruslan Dimitrov
+    - Peng Zhang
+    - Chenyang Wang
+
+### Core Team Contribution
+
+Our core team employs proper branching when contributing to the project, and makes use of branch protection rules when submitting a pull request. Every team member is able to review and accept (or close) these pull requests. Furthermore, we are able to create issues and discussions as it promotes proper team collaboration.
 
 Contributions are welcome, and they are greatly appreciated! Every little bit
 helps, and credit will always be given.
@@ -61,6 +71,12 @@ Ready to contribute? Here's how to set up `stocksignals` for local development.
 
 ## Pull Request Guidelines
 
+Before making a pull request for your proposed changes, please file an issue and confirm that someone from the team agrees that it's a valid problem. When proposing a bug fix, please illustrate the bug via a minimum reproducible example: [MRE](https://stackoverflow.com/help/minimal-reproducible-example). Furthermore, some of the guidelines to follow in your issue are as follows:
+
+1. Please be succinct and communicate your concerns without being superfluous.
+2. For contributions, explain how your proposal is an improvement.
+3. Don't hesitate to include any other details that could be helpful regarding your issue.
+
 Before you submit a pull request, check that it meets these guidelines:
 
 1. The pull request should include additional tests if appropriate.
@@ -70,4 +86,4 @@ Before you submit a pull request, check that it meets these guidelines:
 ## Code of Conduct
 
 Please note that the `stocksignals` project is released with a
-Code of Conduct. By contributing to this project you agree to abide by its terms.
+[Code of Conduct](CONDUCT.md). By contributing to this project you agree to abide by its terms.
