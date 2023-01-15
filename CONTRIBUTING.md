@@ -13,6 +13,10 @@ Our core team employs proper branching when contributing to the project, and mak
 Contributions are welcome, and they are greatly appreciated! Every little bit
 helps, and credit will always be given.
 
+### About
+
+This document outlines how to propose a change to our `StockSignals` project, and the repo can be found [here](https://github.com/UBC-MDS/StockSignals). We look forward to all proposals and contributions to this project! If reporting a bug or requesting features, please open an issue. If you'd like to actively contribute to features and/or bugs, please fork our repo and submit a pull request (PR), which will be reviewed as soon as possible. Please note that all contributors must abide by our code of conduct which can be found below.
+
 ## Types of Contributions
 
 ### Report Bugs
