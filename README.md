@@ -31,7 +31,7 @@ The package consists of 7 functions:
 - `plot_ma_200days`: The function plots the 200-day moving average together with the stock price for a specified period, say 1 year.  It uses the output from the function `move_ave_200days` to plot the chart.
 - `move_ave_10_20`: The function calculates the 10 and 20-day moving averages of the daily closing price together with the actual stock daily closing price. It uses the data saved via `get_data`.
 - `plot_ma_10_20`: The function plots the 10 and 20-day moving average together with the stock price for a specified period, say 1 month. It uses the output from function `move_ave_10_20` to plot the chart.
-- `bbands`: The function calculates the 20 day Bollinger bands for the existing period of the data and returns two lists with the respective upper and lower band. It uses data saved via `get_data`.
+- `get_bbands`: The function calculates the 20 day Bollinger bands for the existing period of the data and returns two lists with the respective upper and lower band. It uses data saved via `get_data`.
 - `plot_bbands`: The function plots upper and lower Bollinger bands together with the stock price for a specified period, say 1 year. It uses the output from function `bbands` to plot the chart.
 
 
