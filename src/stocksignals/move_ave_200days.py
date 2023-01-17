@@ -1,5 +1,4 @@
 import pandas as pd
-import matplotlib as plt
 
 def move_ave_200days(stock_data):
     """
@@ -24,7 +23,4 @@ def move_ave_200days(stock_data):
     mov_avg = data.rolling(window=200).mean()
     return mov_avg
 
-print(move_ave_200days("MSFT"))
-
-
-
+#print(move_ave_200days("MSFT"))
