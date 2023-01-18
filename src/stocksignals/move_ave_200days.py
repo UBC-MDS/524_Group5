@@ -20,8 +20,9 @@ def move_ave_200days(stock_data):
     >>> move_ave_200days(MSFT_data)
     """
     data = pd.read_csv('data/'+stock_data+'.csv')
-    print(data)
+    data.index = pd.to_datetime(data["Date"], utc=True).dt.date
     mov_avg = data.rolling(window=200).mean()
+    mov_avg.index = data.index
     return mov_avg
 
-move_ave_200days("MSFT")
+print(move_ave_200days("MSFT"))
