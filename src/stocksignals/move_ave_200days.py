@@ -1,3 +1,4 @@
+import pandas as pd
 
 def move_ave_200days(stock_data):
     """
@@ -18,3 +19,9 @@ def move_ave_200days(stock_data):
     --------
     >>> move_ave_200days(MSFT_data)
     """
+    data = pd.read_csv('data/'+stock_data+'.csv')
+    print(data)
+    mov_avg = data.rolling(window=200).mean()
+    return mov_avg
+
+move_ave_200days("MSFT")
