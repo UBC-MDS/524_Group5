@@ -12,8 +12,7 @@ def moving_average(stock_data, size):
     Returns
     --------
     moving_avg : list
-        A list represting the 200 day moving average of a stock price for
-        the period of available data
+        A dataframe representing the 200 day moving average of a stock price.
 
     Examples
     --------
@@ -23,4 +22,5 @@ def moving_average(stock_data, size):
     data.index = pd.to_datetime(data["Date"], utc=True).dt.date
     mov_avg = {}
     mov_avg[f"{size}MA"] = data["Close"].rolling(window=size).mean()
-    return pd.DataFrame(mov_avg).reset_index()
+    moving_avg = pd.DataFrame(mov_avg).reset_index()
+    return moving_avg

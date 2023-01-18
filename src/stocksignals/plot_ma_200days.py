@@ -4,27 +4,22 @@ import pandas as pd
 
 def plot_ma_200days(stock):
     """
-    Plot stock price and corresponding 200 day moving average 
-    for a specified period of time
+    Plot stock price and corresponding 200 day moving average.
 
     Parameters
-    ----------
-    moving_avg : list
-        A list representing the 200 day moving average of a stock price for
-        the period of available data
-        
-    period : int
-        period of time for which the plot is created
+    ----------        
+    stock : string
+        name of the stock for which the plot is created
 
     Returns
     --------
-    Altair Chart
+    Matplotlib chart
         A line chart showing price data and corresponding 200 day 
-        moving average line for a stock
+        moving average line for a stock.
 
     Examples
     --------
-    >>> plot_ma_200days(moving_avg, 365)
+    >>> plot_ma_200days("MSFT")
     """
 
     data = pd.read_csv('data/'+stock+'.csv')
