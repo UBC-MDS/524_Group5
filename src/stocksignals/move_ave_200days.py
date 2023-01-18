@@ -1,8 +1,8 @@
 import pandas as pd
 
-def move_ave_200days(stock_data):
+def moving_average(stock_data, size):
     """
-    Calculates the 200 day moving average of a stock price on a given date
+    Calculates the moving average of a stock price for a given range of dates
 
     Parameters
     ----------
@@ -21,8 +21,6 @@ def move_ave_200days(stock_data):
     """
     data = pd.read_csv('data/'+stock_data+'.csv')
     data.index = pd.to_datetime(data["Date"], utc=True).dt.date
-    mov_avg = data.rolling(window=200).mean()
-    mov_avg.index = data.index
-    return mov_avg
-
-print(move_ave_200days("MSFT"))
+    mov_avg = {}
+    mov_avg[f"{size}MA"] = data["Close"].rolling(window=size).mean()
+    return pd.DataFrame(mov_avg).reset_index()

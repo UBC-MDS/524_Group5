@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
-from move_ave_200days import *
+from move_ave_200days import moving_average as ma
 import pandas as pd
 
-def plot_ma_200days(stock, period):
+def plot_ma_200days(stock):
     """
     Plot stock price and corresponding 200 day moving average 
     for a specified period of time
@@ -27,21 +27,19 @@ def plot_ma_200days(stock, period):
     >>> plot_ma_200days(moving_avg, 365)
     """
 
-    start_date = pd.to_datetime(period[0])
-    end_date = pd.to_datetime(period[1])
-
     data = pd.read_csv('data/'+stock+'.csv')
-    data.index = pd.to_datetime(data["Date"], utc=True).dt.date
-    mov_avg = move_ave_200days(stock)
-    mov_avg["Date"] = data["Date"]
+    data["Date"] = pd.to_datetime(data["Date"], utc=True).dt.date
+    mov_avg = ma(stock, 200)  # always going to be 200
 
     plt.figure(figsize=(8,6))
-    plt.plot(data.loc[start_date:end_date, "Date"],
-             data.loc[start_date:end_date, "Close"], label='Price')
-    plt.plot(mov_avg.loc[start_date:end_date, "Date"],  # index
-             mov_avg.loc[start_date:end_date, "Close"], label = '200-days SMA')
+    plt.plot(data.iloc[-200:, 0],  # date
+             data.iloc[-200:, 4], "b-", label='Price')  # close
+    plt.plot(mov_avg.iloc[-200:, 0],
+             mov_avg.iloc[-200:, 1], "r--", label = '200-days SMA')
+    plt.xticks(rotation=90)
+    plt.xlabel("Date (YY-MM-DD)")
+    plt.ylabel("Closing Price (USD)")
+    plt.title("200 day moving average vs closing price")
     plt.legend()
     plt.show()
-
-plot_ma_200days("MSFT", ('2022-10-02', '2023-01-10'))
 
