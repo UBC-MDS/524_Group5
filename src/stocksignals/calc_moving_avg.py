@@ -11,7 +11,7 @@ def moving_average(stock_data, size):
 
     Returns
     --------
-    moving_avg : list
+    moving_avg : dataframe
         A dataframe representing the 200 day moving average of a stock price.
 
     Examples
