@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from move_ave_200days import moving_average as ma
+from calc_moving_avg import moving_average as ma
 import pandas as pd
 
 def plot_ma_200days(stock):
