@@ -32,7 +32,7 @@ def plot_ma_200days(stock, period):
     
     data = pd.read_csv('data/'+stock+'.csv')
     mov_avg = move_ave_200days(stock)
-    print(mov_avg.loc[500, "Close"])
+    print(data)
 
     plt.figure(figsize=(16,9))
     plt.plot(data.loc[500:700, "Close"].index, data.loc[500:700, "Close"], label='Price')
