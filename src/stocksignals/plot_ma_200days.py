@@ -27,18 +27,21 @@ def plot_ma_200days(stock, period):
     >>> plot_ma_200days(moving_avg, 365)
     """
 
-    start_date = '2015-01-01'
-    end_date = '2016-12-31'
-    
-    data = pd.read_csv('data/'+stock+'.csv')
-    mov_avg = move_ave_200days(stock)
-    print(data)
+    start_date = pd.to_datetime(period[0])
+    end_date = pd.to_datetime(period[1])
 
-    plt.figure(figsize=(16,9))
-    plt.plot(data.loc[500:700, "Close"].index, data.loc[500:700, "Close"], label='Price')
-    plt.plot(mov_avg.loc[500:700, "Close"].index, mov_avg.loc[500:700, "Close"], label = '200-days SMA')
+    data = pd.read_csv('data/'+stock+'.csv')
+    data.index = pd.to_datetime(data["Date"], utc=True).dt.date
+    mov_avg = move_ave_200days(stock)
+    mov_avg["Date"] = data["Date"]
+
+    plt.figure(figsize=(8,6))
+    plt.plot(data.loc[start_date:end_date, "Date"],
+             data.loc[start_date:end_date, "Close"], label='Price')
+    plt.plot(mov_avg.loc[start_date:end_date, "Date"],  # index
+             mov_avg.loc[start_date:end_date, "Close"], label = '200-days SMA')
     plt.legend()
     plt.show()
 
-plot_ma_200days("MSFT")
+plot_ma_200days("MSFT", ('2022-10-02', '2023-01-10'))
 
