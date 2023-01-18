@@ -25,7 +25,7 @@ def get_data(stock_ticker):
     # Create DataFrame with the stock history data
     
     ticker = yf.Ticker(stock_ticker)
-    hist = ticker.history(period="max")
+    hist = ticker.history(period="max", interval='1d')
     
     # Define output path for saving the data to a csv file
     out_file = "data/"+stock_ticker+".csv"
