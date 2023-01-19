@@ -2,14 +2,14 @@ import matplotlib.pyplot as plt
 from calc_moving_avg import moving_average as ma
 import pandas as pd
 
-def plot_ma_200days(stock):
+def plot_ma_200days(stock_symbol):
     """
     Plot stock price and corresponding 200 day moving average.
 
     Parameters
     ----------        
-    stock : string
-        name of the stock for which the plot is created
+    stock_symbol : string
+        Ticker symbol of the stock for which the plot is created
 
     Returns
     --------
@@ -22,9 +22,9 @@ def plot_ma_200days(stock):
     >>> plot_ma_200days("MSFT")
     """
 
-    data = pd.read_csv('data/'+stock+'.csv')
+    data = pd.read_csv('data/'+stock_symbol+'.csv')
     data["Date"] = pd.to_datetime(data["Date"], utc=True).dt.date
-    mov_avg = ma(stock, 200)  # always going to be 200
+    mov_avg = ma(stock_symbol, 200)  # always going to be 200
 
     plt.figure(figsize=(8,6))
     plt.plot(data.iloc[-200:, 0],  # date
