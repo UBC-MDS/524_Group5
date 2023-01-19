@@ -1,7 +1,7 @@
 import yfinance as yf
 import os
 
-def get_data(stock_ticker):
+def get_data(stock_symbol):
     """
     Downloads all available historical histocical daily data 
     for stock_ticker from Yahoo finance and stores it as a 
@@ -10,8 +10,8 @@ def get_data(stock_ticker):
     
     Parameters
     ----------
-    stock_ticker : string 
-        Ticker of the stock such as 'MSFT'
+    stock_symbol : string 
+        Ticker symbol of the stock such as 'MSFT'
     
     Returns
     --------
@@ -24,11 +24,11 @@ def get_data(stock_ticker):
     
     # Create DataFrame with the stock history data
     
-    ticker = yf.Ticker(stock_ticker)
+    ticker = yf.Ticker(stock_symbol)
     hist = ticker.history(period="max", interval='1d')
     
     # Define output path for saving the data to a csv file
-    out_file = "data/"+stock_ticker+".csv"
+    out_file = "data/"+stock_symbol+".csv"
 
     # Reset index of dataframe in order to retain dates
     hist.reset_index()
