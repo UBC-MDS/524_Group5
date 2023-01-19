@@ -16,9 +16,9 @@ def get_bbands(stock_data, rate = 20):
         A list with upper band values of 2 standard deviations above
         20-day moving average 
     lower_band : list
-        A list with lower band values of 2 standard deviations above
+        A list with lower band values of 2 standard deviations below
         20-day moving average 
     Examples
     --------
-    >>> bbands(MSFT_data)
+    >>> get_bbands(MSFT_data)
     """
