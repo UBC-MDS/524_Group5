@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from calc_moving_avg import moving_average as ma
+from stocksignals.calc_moving_avg import moving_average as ma
 import pandas as pd
 
 def plot_ma_10_20days(stock_symbol):
@@ -18,7 +18,8 @@ def plot_ma_10_20days(stock_symbol):
     --------
     >>> plot_ma_10_20days("MSFT")
     """
-
+    if not isinstance(stock_symbol, str):
+        raise TypeError("Sorry, the input must be a string")
     data = pd.read_csv('data/'+stock_symbol+'.csv')
     data["Date"] = pd.to_datetime(data["Date"], utc=True).dt.date
     mov_avg_10 = ma(stock_symbol, 10) 
