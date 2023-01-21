@@ -1,3 +1,4 @@
+import pandas as pd
 import plotly.io as pio
 import plotly.graph_objects as go
 pio.renderers.default = "png"
@@ -26,7 +27,7 @@ def plot_bbands(stock_ticker, upper_band, lower_band):
     --------
     >>> plot_bbands('MSFT', upper_band, lower_band)
     """
-    data = pd.read_csv('data/'+stock_ticker+'.csv')
+    data = pd.read_csv('../../data/'+"MSFT"+'.csv')
     data.index = pd.to_datetime(data["Date"], utc=True).dt.date
     df = data[['Close']]
     df['upper'] = upper_band
