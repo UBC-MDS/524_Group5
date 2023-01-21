@@ -1,5 +1,6 @@
 import pandas as pd
 from stocksignals.calc_moving_avg import moving_average as ma
+from stocksignals.get_data import get_data
 
 def test_moving_average():
     """
@@ -8,6 +9,8 @@ def test_moving_average():
     -------
     >>> test_moving_average()
     """
+    get_data("MSFT")
+    get_data("FFIE")
     output = ma("MSFT", 200)
     assert isinstance(output, pd.DataFrame), "Output is not a dataframe!"
     assert len(output.index) != 0, "Period must be greater than 0. Dataframe is empty!"
