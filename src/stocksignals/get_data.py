@@ -28,7 +28,7 @@ def get_data(stock_ticker):
     hist = ticker.history(period="max", interval='1d')
     
     # Define output path for saving the data to a csv file
-    out_file = "data/"+stock_ticker+".csv"
+    out_file = "../../data/"+stock_ticker+".csv"
 
     # Reset index of dataframe in order to retain dates
     hist.reset_index()

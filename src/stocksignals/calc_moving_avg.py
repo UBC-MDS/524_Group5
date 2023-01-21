@@ -18,7 +18,7 @@ def moving_average(stock_data, size):
     --------
     >>> move_ave_200days(MSFT_data)
     """
-    data = pd.read_csv('data/'+stock_data+'.csv')
+    data = pd.read_csv('../../data/'+stock_data+'.csv')
     data.index = pd.to_datetime(data["Date"], utc=True).dt.date
     mov_avg = {}
     mov_avg[f"{size}MA"] = data["Close"].rolling(window=size).mean()

@@ -20,7 +20,7 @@ def plot_ma_10_20days(stock_symbol):
     """
     if not isinstance(stock_symbol, str):
         raise TypeError("Sorry, the input must be a string")
-    data = pd.read_csv('data/'+stock_symbol+'.csv')
+    data = pd.read_csv('../../data/'+stock_symbol+'.csv')
     data["Date"] = pd.to_datetime(data["Date"], utc=True).dt.date
     mov_avg_10 = ma(stock_symbol, 10) 
     mov_avg_20 = ma(stock_symbol, 20)
