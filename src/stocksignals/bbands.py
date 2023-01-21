@@ -1,3 +1,4 @@
+import pandas as pd
 def get_bbands(stock_data, rate = 20):
     """
     Calculates upper and lower Bollinger bands for a stock using
@@ -20,9 +21,9 @@ def get_bbands(stock_data, rate = 20):
         20-day moving average 
     Examples
     --------
-    >>> get_bbands(MSFT_data)
+    >>> get_bbands("MSFT")
     """
-    data = pd.read_csv('data/'+stock_data+'.csv')
+    data = pd.read_csv('../../data/'+stock_data+'.csv')
     data.index = pd.to_datetime(data["Date"], utc=True).dt.date
     df = data[['Close']]
     move_average = df.rolling(window=rate).mean()
