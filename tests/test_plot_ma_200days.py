@@ -1,4 +1,5 @@
 from stocksignals.plot_ma_200days import plot_ma_200days
+from stocksignals.get_data import get_data
 from unittest.mock import patch
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -11,6 +12,10 @@ def test_plot_ma_200days():
     -------
     >>> test_plot_ma_200days()
     """
+    
+    get_data("MSFT")
+    get_data("FFIE")
+    
     # check invalid input
     with raises(TypeError) as error_symbol:
         plot_ma_200days(123)

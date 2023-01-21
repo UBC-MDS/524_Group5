@@ -11,6 +11,7 @@ def test_moving_average():
     """
     get_data("MSFT")
     get_data("FFIE")
+    
     output = ma("MSFT", 200)
     assert isinstance(output, pd.DataFrame), "Output is not a dataframe!"
     assert len(output.index) != 0, "Period must be greater than 0. Dataframe is empty!"
