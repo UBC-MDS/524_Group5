@@ -8,15 +8,18 @@ def moving_average(stock_data, size):
     ----------
     stock_data : string
         A string corresponding to the name of the stock.
+        
+    size : int
+        The size of the period that we're interested in. 
 
     Returns
     --------
     moving_avg : dataframe
-        A dataframe representing the 200 day moving average of a stock price.
+        A dataframe representing the 200 day moving average, for example, of a stock price.
 
     Examples
     --------
-    >>> move_ave_200days("MSFT", 200)
+    >>> moving_average("MSFT", 200)
     """
     data = pd.read_csv('../../data/'+stock_data+'.csv')
     data.index = pd.to_datetime(data["Date"], utc=True).dt.date
