@@ -1,55 +1,49 @@
+import matplotlib.pyplot as plt
+from stocksignals import bbands as bb
 import pandas as pd
-import plotly.io as pio
-import plotly.graph_objects as go
-pio.renderers.default = "png"
 
-def plot_bbands(stock_ticker, upper_band, lower_band):
+def plot_bbands(stock_symbol):
     """
-    Plot stock price along with upper and lower Bollinger band
+    Plot stock price and corresponding upper and lower Bollinger bands.
     
-    Parameters
-    ----------
-    stock_ticker : string 
-        Ticker of the stock such as 'MSFT'
-    upper_band : list
-        A list with upper band values of 2 standard deviations above
-        specified moving average
-    lower_band : list
-        A list with lower band values of 2 standard deviations above
-        specified moving average
-    
+        Parameters
+    ----------        
+    stock_symbol : string
+        Ticker symbol of the stock for which the plot is created
     Returns
     --------
-    plotly chart
-        A chart with stock price along with upper and lower bands
-    
+    Matplotlib chart
+        A line chart showing price data and corresponding upper
+        and lower Bollinger bands.
     Examples
     --------
-    >>> plot_bbands('MSFT', upper_band, lower_band)
+    >>> plot_bbands("MSFT")
     """
-    data = pd.read_csv('../../data/'+"MSFT"+'.csv')
-    data.index = pd.to_datetime(data["Date"], utc=True).dt.date
-    df = data[['Close']]
-    df['upper'] = upper_band
-    df['lower'] = lower_band 
-    pio.templates.default = "plotly_dark"
+    
+    # Check if stock_symbol is a string
+    if not isinstance(stock_symbol, str):
+        raise TypeError("Sorry, the input must be a string")
 
-    fig = go.Figure()
-    fig.add_trace(go.Scatter(x=df.index, 
-                             y=df['lower'] , 
-                             name='Lower Band', 
-                             line_color='rgba(173,204,255,0.2)'
-                            ))
-    fig.add_trace(go.Scatter(x=df.index, 
-                             y=df['upper'], 
-                             name='Upper Band', 
-                             fill='tonexty', 
-                             fillcolor='rgba(173,204,255,0.2)', 
-                             line_color='rgba(173,204,255,0.2)'
-                            ))
-    fig.add_trace(go.Scatter(x=df.index, 
-                             y=df['Close'], 
-                             name='Close', 
-                             line_color='#636EFA'
-                            ))
-    fig.show()
+        
+    # Load the data
+    data = pd.read_csv('../../data/'+stock_symbol+'.csv')
+    data["Date"] = pd.to_datetime(data["Date"], utc=True).dt.date
+
+    
+    # Obtain a DataFrame with the Bollinger bands
+    bbands = bb.get_bbands(stock_symbol).reset_index()
+
+    # Create a plot with closing price surrounded by the two bands
+    plt.figure(figsize=(8,6))
+    plt.plot(data.iloc[-200:, 0],  # date
+             data.iloc[-200:, 4], "b-", label='Price')  # close
+    plt.plot(bbands.iloc[-200:, 0],
+             bbands.iloc[-200:, 1], "r--", label = 'Upper Bollinger band')
+    plt.plot(bbands.iloc[-200:, 0],
+             bbands.iloc[-200:, 2], "g--", label = 'Lower Bollinger band')
+    plt.xticks(rotation=90)
+    plt.xlabel("Date (YYYY-MM)")
+    plt.ylabel("Closing Price (USD)")
+    plt.title("20-day Bollinger bands vs closing price")
+    plt.legend()
+    plt.show()
