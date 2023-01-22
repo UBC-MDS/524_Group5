@@ -4,18 +4,18 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from pytest import raises
 
-def test_plot_ma_10_20days():
+def test_plot_bbands():
     """
-    Test input, plot showing and legend for plot_ma_10_20days()
+    Test input, plot showing and legend for plot_bbands()
     Example
     -------
-    >>> test_plot_ma_10_20days()
+    >>> test_plot_bbands()
     """
     # check invalid input
     with raises(TypeError) as error_symbol:
         plot_bbands(123)
 
-    # check the number of figure created after calling plot_ma_10_20days() function
+    # check the number of figure created after calling plot_bbands() function
     plt.close()
     plot_bbands('FFIE')
     assert plt.gcf().number == 1, "The number of plots created is incorrect!"
