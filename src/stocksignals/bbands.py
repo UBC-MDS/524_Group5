@@ -21,18 +21,16 @@ def get_bbands(stock_data, rate = 20):
     --------
     >>> get_bbands("MSFT")
     """
+    # Read stock data from saved file
     data = pd.read_csv('../../data/'+stock_data+'.csv')
 
-
+    # Compute prerequisites for the bands
     data.index = pd.to_datetime(data["Date"], utc=True).dt.date
     df = data[['Close']]
     move_average = df.rolling(window=20).mean()
     move_standard_deviation = df.rolling(window=20).std()
 
-    bbands = {}
-
-    # # bbands['Date'] = data['Date']
-
+    # Create dataframe with the two bands
     bands = move_average + 2 * move_standard_deviation
     bands = bands.rename(columns={"Close": "upper_band"})
     bands['lower_band'] = move_average - 2 * move_standard_deviation
