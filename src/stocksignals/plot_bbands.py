@@ -4,7 +4,8 @@ import pandas as pd
 
 def plot_bbands(stock_symbol):
     """
-    Plot stock price and corresponding upper and lower Bollinger bands.
+    Plot stock price and corresponding upper and lower Bollinger bands
+    for the last 200 trading days.
     
         Parameters
     ----------        
@@ -43,7 +44,7 @@ def plot_bbands(stock_symbol):
              bbands.iloc[-200:, 2], "g--", label = 'Lower Bollinger band')
     plt.xticks(rotation=90)
     plt.xlabel("Date (YYYY-MM)")
-    plt.ylabel("Closing Price (USD)")
-    plt.title("20-day Bollinger bands vs closing price")
+    plt.ylabel("Price level (USD)")
+    plt.title(f"20-day Bollinger bands vs closing price {stock_symbol}")
     plt.legend()
     plt.show()
