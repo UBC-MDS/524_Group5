@@ -6,8 +6,8 @@ def moving_average(stock_data, size):
 
     Parameters
     ----------
-    data : a data file containing all available stock data
-            from Yahoo finance
+    stock_data : string
+        A string corresponding to the name of the stock.
 
     Returns
     --------
@@ -16,7 +16,7 @@ def moving_average(stock_data, size):
 
     Examples
     --------
-    >>> move_ave_200days(MSFT_data)
+    >>> move_ave_200days("MSFT", 200)
     """
     data = pd.read_csv('../../data/'+stock_data+'.csv')
     data.index = pd.to_datetime(data["Date"], utc=True).dt.date
