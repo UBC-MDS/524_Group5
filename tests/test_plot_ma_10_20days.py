@@ -10,7 +10,7 @@ def test_plot_ma_10_20days():
     Example
     -------
     >>> test_plot_ma_10_20days()
-    """
+    """    
     # check invalid input
     with raises(TypeError) as error_symbol:
         plot_ma_10_20days(123)
