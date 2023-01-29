@@ -57,6 +57,8 @@ import stocksignals
 import matplotlib.pyplot as plt
 import yfinance as yf
 
+stock_ticker = "MSFT"  # the stock we're interested in. 
+size = 100  # size of window for moving average
 
 # Generage signals and plots
 get_data.get_data(stock_ticker)
