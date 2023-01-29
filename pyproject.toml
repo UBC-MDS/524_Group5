@@ -5,6 +5,9 @@ description = "Calculate buy/sell signal indicators for a stock!"
 authors = ["Ruslan Dimitrov, Robin Dhilon, Peng Zhang, Chenyang Wang"]
 license = "MIT"
 readme = "README.md"
+homepage = "https://github.com/UBC-MDS/StockSignals"
+repository = "https://github.com/UBC-MDS/StockSignals"
+documentation = 'https://StockSignals.readthedocs.io'
 
 [tool.poetry.dependencies]
 python = "^3.9"
