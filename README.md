@@ -1,3 +1,5 @@
+![Workflow Badge](https://github.com/UBC-MDS/StockSignals/actions/workflows/ci-cd.yml/badge.svg)
+
 # Stocksignals
 
 Calculate buy/sell signal indicators for a stock!
@@ -26,7 +28,7 @@ Typically when the market and stocks in particular are trading below 200-day mov
 <!-- #region -->
 ## Package details
 The package consists of 6 functions:
-- `get_data`: The function downloads all available historic price data for a selected stock and saves it. It utilizes the `yfinance` python package to automate the process. 
+- `get_data`: The function downloads all available historic price data for a selected stock and saves it as a `csv` file. It utilizes the `yfinance` python package to automate the process. 
 - `moving_average`: The function (inside `calc_moving_average.py` module) calculates a moving average, i.e. the average stock closing price over a specified period, which is passed as argument `size` in the function call. It uses the data saved via `get_data`.
 - `plot_ma_200days`: The function plots the 200-day moving average together with the stock price for a specified period, say the past 200 trading days.  It uses the output from the function `calc_moving_avg` to plot the chart.
 - `plot_ma_10_20`: The function plots the 10 and 20-day moving average together with the stock price for a specified period, say the past 200 trading days. It uses the output from function `move_ave_10_20` to plot the chart.
