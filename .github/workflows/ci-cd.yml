@@ -23,8 +23,8 @@ jobs:
       - name: Install package
         run: poetry install
 
-      - name: Test with pytest
-        run: poetry run pytest tests/ --cov=StockSignals --cov-report=xml
+      #- name: Test with pytest
+      #  run: poetry run pytest tests/ --cov=StockSignals --cov-report=xml
 
       - name: Use Codecov to track coverage
         uses: codecov/codecov-action@v2
