@@ -18,6 +18,9 @@ yfinance = "^0.2.9"
 pytest = "^7.2.1"
 patch = "^1.16"
 raises = "^0.2"
+sphinx-autoapi = "^2.0.1"
+sphinx-rtd-theme = "^1.1.1"
+myst-nb = {version = "^0.17.1", python = "^3.9"}
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
