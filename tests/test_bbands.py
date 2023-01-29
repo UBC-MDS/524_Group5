@@ -2,13 +2,13 @@ import pandas as pd
 import stocksignals.bbands as bb
 from stocksignals.get_data import get_data
 
-def test_moving_average():
+def test_get_bbands():
     """
     Tests that the Bollinger bands are calculated as expected
     and the return object is correct.
     Example
     -------
-    >>> test_bbands()
+    >>> test_get_bbands()
     """
     get_data("MSFT")
     get_data("FFIE")
