@@ -53,20 +53,24 @@ $ pip install stocksignals
 ## Usage
 
 ```bash
-import stocksignals
-import matplotlib.pyplot as plt
-import yfinance as yf
 
-stock_ticker = "MSFT"  # the stock we're interested in. 
-size = 100  # size of window for moving average
+from stocksignals.get_data import *
+get_data("MSFT")
 
-# Generage signals and plots
-get_data.get_data(stock_ticker)
-calc_moving_average.moving_average(stock_ticker, size)
-plot_ma_10_20.plot_ma_10_20(stock_ticker)
-plot_ma_200days.plot_ma_200days(stock_ticker)
-bbands.get_bbands(stock_ticker)
-plot_bbands.plot_bbands(stock_ticker)
+from stocksignals.calc_moving_avg import *
+moving_average("MSFT", 10)
+
+from stocksignals.bbands import *
+get_bbands("MSFT")
+
+from stocksignals.plot_bbands import *
+plot_bbands("MSFT")
+
+from stocksignals.plot_ma_10_20 import *
+plot_ma_10_20days("MSFT")
+
+from stocksignals.plot_ma_200days import *
+plot_ma_200days("MSFT")
 ```
 
 <!-- #region -->
