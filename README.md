@@ -13,6 +13,10 @@ Calculate buy/sell signal indicators for a stock!
 
 This data science project is created for DSCI 524 (Collaborative Software Development); a course in the Master of Data Science program at the University of British Columbia.
 
+## ReadTheDocs
+
+The documentation found in this readme can also be found at ReadTheDocs [here](https://stocksignals.readthedocs.io/en/latest) which is rendered using the napolean Sphinx extension. 
+
 ## Introduction
 
 The goal of this project is to develop a package which can be used as a starting point for identifying stock buy/sell signals. Stock investing is a complex process which requires ongoing efforts and there is no one formula or indicator that works all the time. There exists extensive research on how to identify opportunities and profit from stocks. Methodologies for evaluating financial instruments range widely. An investor can utilize macroeconomic research, fundamental analysis, news, analyst reports, or technical analysis. In all those approaches numerical analysis is the underlying common theme.
