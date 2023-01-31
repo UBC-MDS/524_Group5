@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "stocksignals"
-version = "0.0.6"
+version = "0.0.7"
 description = "Calculate buy/sell signal indicators for a stock!"
 authors = ["Ruslan Dimitrov, Robin Dhilon, Peng Zhang, Chenyang Wang"]
 license = "MIT"
